@@ -8,13 +8,9 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Setup
-        uses: actions/setup-node@v1.1.0
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
-          version: 12.x
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Install
-        run: npm install
-      - name: Test
-        run: npm test
+          node-version: '14'
+      - run: npm install
+      - run: npm test
