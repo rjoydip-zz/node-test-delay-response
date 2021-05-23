@@ -8,6 +8,11 @@ void (async function () {
         resolve(statusText);
         return pForever.end;
       }
+      // Optional: If you want to set some timeout then use below commented code. 
+      /* setTimeout(() => {
+        resolve(-1);
+        return pForever.end;
+      }, 1000); */
       try {
         statusText = (await (await fetch("http://127.0.0.1:3000/")).json())
           .statusText;
